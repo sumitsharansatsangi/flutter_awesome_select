@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 /// Text widget that supports highlight
 class S2Text extends StatelessWidget {
   /// The text data string
@@ -37,8 +37,8 @@ class S2Text extends StatelessWidget {
     if ((highlight?.isEmpty ?? true) || text!.isEmpty) {
       return Text(text!, style: style);
     }
-
-    final TextStyle defaultTextStyle = DefaultTextStyle.of(context).style;
+    final TextStyle defaultTextStyle = TextStyle();
+    // final TextStyle defaultTextStyle = DefaultTextStyle.of(context).style;
     final TextStyle textStyle = defaultTextStyle.merge(style);
     final Pattern pattern = RegExp(highlight!, caseSensitive: caseSensitive);
     int start = 0;

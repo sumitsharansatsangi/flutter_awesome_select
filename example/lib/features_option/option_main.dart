@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sticky_headers/sticky_headers.dart';
+import '../sticky_headers/sticky_headers/widget.dart';
 import './option_disabled.dart';
 import './option_hidden.dart';
 import './option_list_of_string.dart';

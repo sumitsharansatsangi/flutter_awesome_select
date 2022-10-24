@@ -2,6 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'dart:ui';
 
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 /// Configure modal style
 @immutable
 class S2ModalStyle with Diagnosticable {
@@ -148,7 +150,7 @@ class S2ModalHeaderStyle with Diagnosticable {
       brightness: other.brightness,
       useLeading: other.useLeading,
       centerTitle: other.centerTitle,
-      textStyle: other.textStyle,
+      textStyle: TextStyle(fontSize: 15.sp),
       errorStyle: other.errorStyle,
       iconTheme: other.iconTheme,
       actionsIconTheme: other.actionsIconTheme,

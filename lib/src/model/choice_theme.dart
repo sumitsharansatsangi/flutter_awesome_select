@@ -1,7 +1,6 @@
-import 'package:flutter/painting.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/rendering.dart';
-import 'dart:ui';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 /// Where to place the control in widgets that use [ListTile] to position a
 /// control next to a label.
@@ -120,7 +119,8 @@ class S2ChoiceStyle with Diagnosticable {
     ShapeBorder? shape,
   }) {
     return S2ChoiceStyle(
-      titleStyle: this.titleStyle?.merge(titleStyle) ?? titleStyle,
+      // titleStyle: this.titleStyle?.merge(titleStyle) ?? titleStyle,
+      titleStyle: TextStyle(fontSize: 13.sp),
       subtitleStyle: this.subtitleStyle?.merge(subtitleStyle) ?? subtitleStyle,
       margin: margin ?? this.margin,
       padding: padding ?? this.padding,
@@ -146,7 +146,7 @@ class S2ChoiceStyle with Diagnosticable {
     if (other == null) return this;
 
     return copyWith(
-      titleStyle: other.titleStyle,
+      titleStyle: TextStyle(fontSize: 1.sp),//other.titleStyle,
       subtitleStyle: other.subtitleStyle,
       margin: other.margin,
       padding: other.padding,

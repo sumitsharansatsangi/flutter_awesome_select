@@ -1,6 +1,6 @@
 import 'package:collection/collection.dart' show IterableExtension;
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'model/builder.dart';
 import 'model/modal_theme.dart';
 import 'model/modal_config.dart';
@@ -972,19 +972,16 @@ abstract class S2State<T> extends State<SmartSelect<T>> {
       headerStyle: S2ModalHeaderStyle(
         backgroundColor:
             widget.modalConfig.isFullPage != true ? theme.cardColor : null,
-        textStyle: widget.modalConfig.isFullPage != true
-            ? theme.textTheme.headline6
-            : theme.primaryTextTheme.headline6,
+        textStyle: TextStyle(fontSize: 1.sp),
+        // textStyle: widget.modalConfig.isFullPage != true
+        //     ? theme.textTheme.headline6
+        //     : theme.primaryTextTheme.headline6,
         iconTheme:
             widget.modalConfig.isFullPage != true ? theme.iconTheme : null,
         errorStyle: TextStyle(
           fontSize: 13.5,
           fontWeight: FontWeight.w500,
-          color: widget.modalConfig.isFullPage == true
-              ? (theme.primaryColorBrightness == Brightness.dark
-                  ? Colors.white
-                  : theme.errorColor)
-              : theme.errorColor,
+          color: theme.errorColor,
         ),
       ).merge(widget.modalConfig.headerStyle),
     );
@@ -1168,7 +1165,6 @@ abstract class S2State<T> extends State<SmartSelect<T>> {
     return _customConfirmButton ?? defaultConfirmButton;
   }
 
-
   /// Returns the custom confirm button widget
   Widget? get _customConfirmButton;
 
@@ -1186,9 +1182,14 @@ abstract class S2State<T> extends State<SmartSelect<T>> {
             child: TextButton.icon(
               icon: modalConfig.confirmIcon!,
               label: modalConfig.confirmLabel!,
-              style: TextButton.styleFrom(backgroundColor: modalConfig.confirmIsDark ? modalConfig.confirmColor : null,textStyle: TextStyle(color: modalConfig.confirmIsLight
-                  ? modalConfig.confirmColor
-                  : Colors.white)),
+              style: TextButton.styleFrom(
+                  backgroundColor: modalConfig.confirmIsDark
+                      ? modalConfig.confirmColor
+                      : null,
+                  textStyle: TextStyle(
+                      color: modalConfig.confirmIsLight
+                          ? modalConfig.confirmColor
+                          : Colors.white)),
               onPressed: onPressed,
             ),
           ),
@@ -1200,9 +1201,14 @@ abstract class S2State<T> extends State<SmartSelect<T>> {
                 const EdgeInsets.fromLTRB(0, 0, 10, 0),
             child: TextButton(
               child: modalConfig.confirmLabel!,
-              style: TextButton.styleFrom(backgroundColor: modalConfig.confirmIsDark ? modalConfig.confirmColor : null,textStyle: TextStyle(color: modalConfig.confirmIsLight
-                  ? modalConfig.confirmColor
-                  : Colors.white)),
+              style: TextButton.styleFrom(
+                  backgroundColor: modalConfig.confirmIsDark
+                      ? modalConfig.confirmColor
+                      : null,
+                  textStyle: TextStyle(
+                      color: modalConfig.confirmIsLight
+                          ? modalConfig.confirmColor
+                          : Colors.white)),
               onPressed: onPressed,
             ),
           ),
@@ -1238,7 +1244,6 @@ abstract class S2State<T> extends State<SmartSelect<T>> {
       primary: true,
       shape: modalHeaderStyle.shape,
       elevation: modalHeaderStyle.elevation,
-      brightness: modalHeaderStyle.brightness,
       backgroundColor: modalHeaderStyle.backgroundColor,
       actionsIconTheme: modalHeaderStyle.actionsIconTheme,
       iconTheme: modalHeaderStyle.iconTheme,
@@ -1540,7 +1545,7 @@ abstract class S2State<T> extends State<SmartSelect<T>> {
           isScrollControlled: true,
           builder: (_) {
             final MediaQueryData mediaQuery =
-                MediaQueryData.fromWindow(WidgetsBinding.instance!.window);
+                MediaQueryData.fromWindow(WidgetsBinding.instance.window);
             final double topObstructions = mediaQuery.viewPadding.top;
             final double bottomObstructions = mediaQuery.viewPadding.bottom;
             final double keyboardHeight = mediaQuery.viewInsets.bottom;
@@ -1693,8 +1698,6 @@ abstract class S2State<T> extends State<SmartSelect<T>> {
 
 /// State for Single Choice
 class S2SingleState<T> extends S2State<T> {
-  
-
   /// State of the selected choice(s)
   @override
   S2SingleSelected<T>? selected;

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../widget.dart';
 
 /// Default trigger/tile widget
@@ -216,7 +217,7 @@ class S2Tile<T> extends StatelessWidget {
           child: isLoading == true ? _loadingWidget : value,
           style: isError == true
               ? TextStyle(color: Theme.of(context).errorColor)
-              : null,
+              : TextStyle(fontSize: 13.sp),
           overflow: TextOverflow.ellipsis,
           maxLines: 1,
         );

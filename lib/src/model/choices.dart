@@ -22,12 +22,11 @@ class S2Choices<T> {
 
   /// return a filtered list of options
   List<S2Choice<T>> get filteredItems {
-    return query != null
-        ? nonHiddenItems
+    return  nonHiddenItems
             .where((S2Choice<T> item) => item.contains(query))
             .toList()
             .cast<S2Choice<T>>()
-        : nonHiddenItems;
+      ;
   }
 
   /// return a non hidden option item

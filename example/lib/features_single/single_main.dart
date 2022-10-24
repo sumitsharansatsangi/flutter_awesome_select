@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sticky_headers/sticky_headers.dart';
+import '../sticky_headers/sticky_headers/widget.dart';
 import './single_page.dart';
 import './single_sheet.dart';
 import './single_popup.dart';

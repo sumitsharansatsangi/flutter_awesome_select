@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sticky_headers/sticky_headers.dart';
+import '../sticky_headers/sticky_headers/widget.dart';
 import './tile_one_line.dart';
 import './tile_two_line.dart';
 import './tile_loading.dart';

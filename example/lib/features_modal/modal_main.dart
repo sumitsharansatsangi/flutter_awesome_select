@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sticky_headers/sticky_headers.dart';
+import '../sticky_headers/sticky_headers/widget.dart';
 import './modal_filter.dart';
 import './modal_confirm.dart';
 import './modal_validation.dart';

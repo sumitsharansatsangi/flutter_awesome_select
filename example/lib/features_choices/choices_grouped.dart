@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:awesome_select/awesome_select.dart';
-import 'package:sticky_headers/sticky_headers.dart';
 
 import '../choices.dart' as choices;
+import '../sticky_headers/sticky_headers/widget.dart';
 
 class FeaturesChoicesGrouped extends StatefulWidget {
   @override
